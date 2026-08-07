@@ -1,0 +1,66 @@
+[
+  {
+    "id": "espresso",
+    "name": "Espresso",
+    "icon": "☕",
+    "price": 50,
+    "description": "+2 Focus this turn.",
+    "effects": [{ "type": "gain-focus", "value": 2 }]
+  },
+  {
+    "id": "kalltips",
+    "name": "Källtips",
+    "icon": "📋",
+    "price": 50,
+    "description": "Draw 3 cards.",
+    "effects": [{ "type": "draw", "value": 3 }]
+  },
+  {
+    "id": "bandaid",
+    "name": "Plåster",
+    "icon": "🩹",
+    "price": 50,
+    "description": "Heal 10 Credibility.",
+    "effects": [{ "type": "heal", "value": 10 }]
+  },
+  {
+    "id": "kraftfull-rubrik",
+    "name": "Kraftfull Rubrik",
+    "icon": "📢",
+    "price": 75,
+    "description": "Deal 20 Pressure to ALL subjects.",
+    "effects": [{ "type": "pressure-all", "value": 20 }]
+  },
+  {
+    "id": "anonymt-brev",
+    "name": "Anonymt Brev",
+    "icon": "✉️",
+    "price": 50,
+    "description": "Apply 3 Flustered to ALL subjects.",
+    "effects": [{ "type": "apply-status", "target": "enemy", "status": "flustered", "stacks": 3 }]
+  },
+  {
+    "id": "hemligt-dokument",
+    "name": "Hemligt Dokument",
+    "icon": "📄",
+    "price": 75,
+    "description": "Gain 4 On a Roll.",
+    "effects": [{ "type": "apply-status", "target": "self", "status": "on-a-roll", "stacks": 4 }]
+  },
+  {
+    "id": "pansar-vest",
+    "name": "Skottsäker Väst",
+    "icon": "🦺",
+    "price": 75,
+    "description": "Gain 5 Thick Skin (+5 Rapport per block card).",
+    "effects": [{ "type": "apply-status", "target": "self", "status": "thick-skin", "stacks": 5 }]
+  },
+  {
+    "id": "dubbel-espresso",
+    "name": "Dubbel Espresso",
+    "icon": "☕☕",
+    "price": 100,
+    "description": "+3 Focus. Draw 2.",
+    "effects": [{ "type": "gain-focus", "value": 3 }, { "type": "draw", "value": 2 }]
+  }
+]

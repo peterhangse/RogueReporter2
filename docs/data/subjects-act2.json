@@ -1,0 +1,108 @@
+[
+  {
+    "id": "lobbyisten",
+    "name": "Lobbyisten",
+    "tier": "normal",
+    "composure": 52,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "ATTACK", "value": 9, "weight": 2, "label": "Påtryckning 9" },
+      { "type": "GUARD", "value": 8, "weight": 2, "label": "Kontaktnät" },
+      { "type": "BUFF", "value": 2, "status": "guarded", "weight": 1, "label": "Skyddat nätverk" }
+    ]
+  },
+  {
+    "id": "pr-konsulten",
+    "name": "PR-konsulten",
+    "tier": "normal",
+    "composure": 50,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "ATTACK", "value": 7, "weight": 2, "label": "Medieattack 7" },
+      { "type": "SPIN", "value": 2, "weight": 3, "label": "Spin-maskin" },
+      { "type": "GUARD", "value": 7, "weight": 1, "label": "Imagekontroll" }
+    ]
+  },
+  {
+    "id": "mellanchefen",
+    "name": "Mellanchefen",
+    "tier": "normal",
+    "composure": 45,
+    "behavior": "rotation",
+    "moves": [
+      { "type": "GUARD", "value": 6, "label": "Hänvisa uppåt" },
+      { "type": "ATTACK", "value": 8, "label": "Passiv-aggressiv 8" },
+      { "type": "NO_COMMENT", "value": 0, "label": "Möte pågår" }
+    ]
+  },
+  {
+    "id": "revisorn",
+    "name": "Revisorn",
+    "tier": "normal",
+    "composure": 58,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "GUARD", "value": 14, "weight": 3, "label": "Revision pågår" },
+      { "type": "ATTACK", "value": 10, "weight": 2, "label": "Sifferkrig 10" },
+      { "type": "BUFF", "value": 3, "status": "guarded", "weight": 1, "label": "Dubbel bokföring" }
+    ]
+  },
+  {
+    "id": "forsvarsadvokaten",
+    "name": "Försvarsadvokaten",
+    "tier": "elite",
+    "composure": 90,
+    "behavior": "weighted",
+    "boss": false,
+    "moves": [
+      { "type": "ATTACK", "value": 12, "weight": 2, "label": "Rättslig åtgärd 12" },
+      { "type": "GUARD", "value": 15, "weight": 2, "label": "Tystnadsparagraf" },
+      { "type": "DEBUFF", "value": 1, "status": "rattled", "stacks": 2, "weight": 1, "label": "Förundersökning" }
+    ],
+    "phases": [
+      { "threshold": 1, "moves": [
+        { "type": "GUARD", "value": 15, "weight": 2, "label": "Tystnadsparagraf" },
+        { "type": "ATTACK", "value": 12, "weight": 2, "label": "Rättslig åtgärd 12" }
+      ]},
+      { "threshold": 0.5, "moves": [
+        { "type": "ATTACK", "value": 18, "weight": 3, "label": "Skadeståndskrav 18" },
+        { "type": "DEBUFF", "value": 1, "status": "rattled", "stacks": 3, "weight": 1, "label": "Polisanmälan" }
+      ]}
+    ]
+  },
+  {
+    "id": "mediemogulen",
+    "name": "Mediemogulen",
+    "tier": "elite",
+    "composure": 95,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "SPIN", "value": 3, "weight": 3, "label": "Medieimperium" },
+      { "type": "ATTACK", "value": 11, "weight": 2, "label": "Ägarmakt 11" },
+      { "type": "BUFF", "value": 4, "status": "pr-spin", "weight": 1, "label": "Konsolidering" }
+    ]
+  },
+  {
+    "id": "vdn",
+    "name": "VDn",
+    "tier": "boss",
+    "composure": 150,
+    "behavior": "weighted",
+    "boss": true,
+    "phases": [
+      { "threshold": 1.0, "moves": [
+        { "type": "ATTACK", "value": 10, "weight": 2, "label": "Styrelsemöte 10" },
+        { "type": "GUARD", "value": 14, "weight": 2, "label": "Företagshemlighet" },
+        { "type": "SPIN", "value": 2, "weight": 1, "label": "PR-avdelning" }
+      ]},
+      { "threshold": 0.5, "moves": [
+        { "type": "ATTACK", "value": 16, "weight": 3, "label": "Fientligt övertagande 16" },
+        { "type": "ATTACK", "value": 8, "hits": 3, "weight": 1, "label": "Trippelattack 8×3" },
+        { "type": "DEBUFF", "value": 2, "status": "rattled", "stacks": 2, "weight": 1, "label": "Boardroom Lockout" }
+      ]}
+    ],
+    "specialMoves": [
+      { "trigger": "turn", "turnNumber": 5, "move": { "type": "GUARD", "value": 30, "label": "Aktieutdelning 30" } }
+    ]
+  }
+]

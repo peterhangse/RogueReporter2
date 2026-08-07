@@ -1,0 +1,118 @@
+[
+  {
+    "id": "livvakten",
+    "name": "Livvakten",
+    "tier": "normal",
+    "composure": 62,
+    "behavior": "rotation",
+    "moves": [
+      { "type": "ATTACK", "value": 14, "label": "Fysisk blockering 14" },
+      { "type": "GUARD", "value": 8, "label": "Skyddsformation" },
+      { "type": "ATTACK", "value": 10, "label": "Handgemäng 10" }
+    ]
+  },
+  {
+    "id": "inrikesministern",
+    "name": "Inrikesministern",
+    "tier": "normal",
+    "composure": 60,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "ATTACK", "value": 9, "weight": 2, "label": "Politisk manöver 9" },
+      { "type": "BUFF", "value": 3, "status": "pr-spin", "weight": 2, "label": "Departementsstöd" },
+      { "type": "GUARD", "value": 10, "weight": 2, "label": "Riksdagsskydd" },
+      { "type": "DEBUFF", "value": 1, "status": "rattled", "stacks": 1, "weight": 1, "label": "Säpo-hot" }
+    ]
+  },
+  {
+    "id": "kartellbokforaren",
+    "name": "Kartellbokföraren",
+    "tier": "normal",
+    "composure": 55,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "ATTACK", "value": 8, "weight": 2, "label": "Förfalskning 8" },
+      { "type": "GUARD", "value": 12, "weight": 2, "label": "Skatteparadis" },
+      { "type": "BUFF", "value": 5, "status": "guarded", "weight": 1, "label": "Skalbolag" }
+    ]
+  },
+  {
+    "id": "dubbelagenten",
+    "name": "Dubbelagenten",
+    "tier": "normal",
+    "composure": 50,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "ATTACK", "value": 12, "weight": 2, "label": "Dubbelspel 12" },
+      { "type": "DEBUFF", "value": 1, "status": "flustered", "stacks": 1, "weight": 2, "label": "Desinformation" },
+      { "type": "NO_COMMENT", "value": 0, "weight": 2, "label": "Kodord" },
+      { "type": "ATTACK", "value": 6, "hits": 2, "weight": 1, "label": "Snabbattack 6×2" }
+    ]
+  },
+  {
+    "id": "underrattelsechefen",
+    "name": "Underrättelsechefen",
+    "tier": "elite",
+    "composure": 105,
+    "behavior": "weighted",
+    "boss": false,
+    "moves": [
+      { "type": "ATTACK", "value": 14, "weight": 2, "label": "Klassificerad info 14" },
+      { "type": "GUARD", "value": 16, "weight": 2, "label": "Sekretessbelagt" },
+      { "type": "DEBUFF", "value": 2, "status": "rattled", "stacks": 2, "weight": 1, "label": "Övervakning" },
+      { "type": "SPIN", "value": 3, "weight": 1, "label": "Desinformation" }
+    ],
+    "phases": [
+      { "threshold": 1, "moves": [
+        { "type": "GUARD", "value": 16, "weight": 3, "label": "Sekretess" },
+        { "type": "ATTACK", "value": 14, "weight": 2, "label": "Klassificerat 14" }
+      ]},
+      { "threshold": 0.4, "moves": [
+        { "type": "ATTACK", "value": 20, "weight": 3, "label": "Whistleblower-jakt 20" },
+        { "type": "DEBUFF", "value": 2, "status": "rattled", "stacks": 3, "weight": 2, "label": "Avlyssning" }
+      ]}
+    ]
+  },
+  {
+    "id": "polischefen",
+    "name": "Polischefen",
+    "tier": "elite",
+    "composure": 85,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "ATTACK", "value": 12, "weight": 3, "label": "Myndighetsutövning 12" },
+      { "type": "GUARD", "value": 12, "weight": 2, "label": "Bakom blålinjen" },
+      { "type": "DEBUFF", "value": 1, "status": "off-message", "stacks": 1, "weight": 1, "label": "Publiceringsförbud" }
+    ]
+  },
+  {
+    "id": "fixaren",
+    "name": "Fixaren",
+    "tier": "boss",
+    "composure": 180,
+    "behavior": "weighted",
+    "boss": true,
+    "phases": [
+      { "threshold": 1.0, "moves": [
+        { "type": "ATTACK", "value": 12, "weight": 2, "label": "Kontaktnät 12" },
+        { "type": "GUARD", "value": 18, "weight": 2, "label": "Wall of Silence" },
+        { "type": "SPIN", "value": 2, "weight": 1, "label": "Mediestyrning" },
+        { "type": "DEBUFF", "value": 1, "status": "rattled", "stacks": 2, "weight": 1, "label": "Hot mot familjen" }
+      ]},
+      { "threshold": 0.5, "moves": [
+        { "type": "ATTACK", "value": 18, "weight": 3, "label": "Paradox 18" },
+        { "type": "ATTACK", "value": 8, "hits": 3, "weight": 2, "label": "Trippelbluff 8×3" },
+        { "type": "DEBUFF", "value": 2, "status": "flustered", "stacks": 2, "weight": 1, "label": "Identitetsstöld" }
+      ]},
+      { "threshold": 0.25, "moves": [
+        { "type": "ATTACK", "value": 24, "weight": 3, "label": "Slutuppgörelse 24" },
+        { "type": "ATTACK", "value": 10, "hits": 4, "weight": 2, "label": "Desperation 10×4" },
+        { "type": "SPIN", "value": 4, "weight": 1, "label": "Total desinformation" }
+      ]}
+    ],
+    "specialMoves": [
+      { "trigger": "turn", "turnNumber": 3, "move": { "type": "GUARD", "value": 40, "label": "Tystnadskontraktet" } },
+      { "trigger": "turn", "turnNumber": 8, "move": { "type": "ATTACK", "value": 30, "label": "Nuclear Option 30" } }
+    ]
+  }
+]

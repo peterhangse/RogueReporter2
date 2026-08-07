@@ -1,0 +1,8 @@
+{
+  "hosting": {
+    "site": "the-scoop-game",
+    "public": "docs",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "src/**", "*.md"],
+    "rewrites": [{ "source": "**", "destination": "/index.html" }]
+  }
+}

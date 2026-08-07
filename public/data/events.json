@@ -1,0 +1,161 @@
+[
+  {
+    "id": "nervose-praktikanten-event",
+    "name": "Den nervöse praktikanten",
+    "text": "A nervous intern approaches you in the parking lot. 'I have documents, but if anyone finds out...' They clutch a folder to their chest, eyes darting left and right.",
+    "choices": [
+      {
+        "label": "Take the documents (risky but rewarding)",
+        "effects": [
+          { "type": "gold", "value": 30 },
+          { "type": "damage", "value": 5 }
+        ]
+      },
+      {
+        "label": "Reassure them and protect their identity",
+        "effects": [
+          { "type": "heal", "value": 8 },
+          { "type": "gold", "value": 10 }
+        ]
+      },
+      {
+        "label": "Walk away — too dangerous",
+        "effects": []
+      }
+    ]
+  },
+  {
+    "id": "vanlig-redaktor",
+    "name": "Vänlig Redaktör",
+    "text": "Your editor calls. 'Good work out there. I can either give you a bonus or we can invest in upgrading your equipment.'",
+    "choices": [
+      {
+        "label": "Take the bonus (+50 Press Passes)",
+        "effects": [{ "type": "gold", "value": 50 }]
+      },
+      {
+        "label": "Upgrade equipment (upgrade a random card)",
+        "effects": [{ "type": "upgrade-random" }]
+      }
+    ]
+  },
+  {
+    "id": "stamning",
+    "name": "Stämning",
+    "text": "A lawyer slaps you with a defamation lawsuit outside the courthouse. 'You can settle out of court, or fight it — but it'll cost you time and energy.'",
+    "choices": [
+      {
+        "label": "Settle out of court (-60 Press Passes)",
+        "effects": [{ "type": "lose-gold", "value": 60 }]
+      },
+      {
+        "label": "Fight it (Lose 10 Credibility, but gain a powerful card)",
+        "effects": [
+          { "type": "damage", "value": 10 },
+          { "type": "add-card", "cardId": "smoking-gun" }
+        ]
+      },
+      {
+        "label": "Ignore it (gain Lawsuit curse)",
+        "effects": [{ "type": "add-curse" }]
+      }
+    ]
+  },
+  {
+    "id": "gammal-kalla",
+    "name": "Gammal Källa",
+    "text": "An old source from your early days reaches out. 'I can help you, but I need a favor first. There's a story that needs to be buried.'",
+    "choices": [
+      {
+        "label": "Help them (gain a relic, lose 15 Credibility)",
+        "effects": [
+          { "type": "damage", "value": 15 },
+          { "type": "add-relic", "relicId": "kallnatverk" }
+        ]
+      },
+      {
+        "label": "Refuse and keep your integrity (+10 Max Credibility)",
+        "effects": [{ "type": "max-credibility", "value": 10 }]
+      }
+    ]
+  },
+  {
+    "id": "byfanet",
+    "name": "Byfånet",
+    "text": "The town drunk stumbles up to you with a conspiratorial whisper. Most of what he says is nonsense, but something about 'the mayor's secret boat' sounds interesting...",
+    "choices": [
+      {
+        "label": "Buy him a drink and listen (-20💰, gain a random card)",
+        "effects": [
+          { "type": "lose-gold", "value": 20 },
+          { "type": "add-card", "cardId": "insider-tips" }
+        ]
+      },
+      {
+        "label": "Politely excuse yourself",
+        "effects": [{ "type": "heal", "value": 3 }]
+      }
+    ]
+  },
+  {
+    "id": "hemlig-leverans",
+    "name": "Hemlig Leverans",
+    "text": "A plain brown envelope appears under your door. Inside: a USB drive and a note saying 'Use wisely. There is no going back.'",
+    "choices": [
+      {
+        "label": "Plug it in (gain powerful card, risk +Spin)",
+        "effects": [
+          { "type": "add-card", "cardId": "leaked-doc" },
+          { "type": "add-card", "cardId": "spin" }
+        ]
+      },
+      {
+        "label": "Have IT scan it first (lose the surprise, gain 25 💰)",
+        "effects": [{ "type": "gold", "value": 25 }]
+      },
+      {
+        "label": "Destroy it (safe, +5 Credibility)",
+        "effects": [{ "type": "heal", "value": 5 }]
+      }
+    ]
+  },
+  {
+    "id": "vagnhall",
+    "name": "Vagnhallen",
+    "text": "An abandoned warehouse at the docks. Someone left a cache of documents inside. But the area is watched by security cameras.",
+    "choices": [
+      {
+        "label": "Sneak in (-8 Credibility, remove a random card from deck)",
+        "effects": [
+          { "type": "damage", "value": 8 },
+          { "type": "remove-card" }
+        ]
+      },
+      {
+        "label": "Come back at night with backup (+30 💰)",
+        "effects": [{ "type": "gold", "value": 30 }]
+      }
+    ]
+  },
+  {
+    "id": "tips-telefon",
+    "name": "Tipstelefonen",
+    "text": "The anonymous tip line rings at 3 AM. A disguised voice tells you: 'Check the third drawer in the city clerk's desk.' Do you trust this?",
+    "choices": [
+      {
+        "label": "Go investigate immediately (gain a random rare card)",
+        "effects": [
+          { "type": "add-card", "cardId": "off-the-record" }
+        ]
+      },
+      {
+        "label": "It's a trap — stay home and rest",
+        "effects": [{ "type": "heal", "value": 12 }]
+      },
+      {
+        "label": "Report the tip to your editor (+40 💰)",
+        "effects": [{ "type": "gold", "value": 40 }]
+      }
+    ]
+  }
+]

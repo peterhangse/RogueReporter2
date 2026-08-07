@@ -1,0 +1,180 @@
+[
+  {
+    "id": "branschrykte",
+    "name": "Branschrykte",
+    "icon": "📰",
+    "tier": "starter",
+    "description": "Heal 6 Credibility after each interview.",
+    "hook": "onInterviewWin",
+    "effect": { "type": "heal", "value": 6 }
+  },
+  {
+    "id": "sliten-presslegitimation",
+    "name": "Sliten Presslegitimation",
+    "icon": "🪪",
+    "tier": "common",
+    "shopPrice": 120,
+    "description": "+1 Focus at the start of each interview.",
+    "hook": "onInterviewStart",
+    "effect": { "type": "max-focus", "value": 1 }
+  },
+  {
+    "id": "barbar-bandspelaren",
+    "name": "Bärbar Bandspelaren",
+    "icon": "📻",
+    "tier": "common",
+    "shopPrice": 100,
+    "description": "Draw 1 extra card at the start of each turn.",
+    "hook": "onTurnStart",
+    "effect": { "type": "draw", "value": 1 }
+  },
+  {
+    "id": "notisblock",
+    "name": "Notisblock",
+    "icon": "📝",
+    "tier": "common",
+    "shopPrice": 100,
+    "description": "+1 On a Roll at the start of each interview.",
+    "hook": "onInterviewStart",
+    "effect": { "type": "apply-status", "status": "on-a-roll", "stacks": 1 }
+  },
+  {
+    "id": "bestaende-instinkt",
+    "name": "Bestående Instinkt",
+    "icon": "🎯",
+    "tier": "common",
+    "shopPrice": 90,
+    "description": "+3 Rapport at the start of each turn.",
+    "hook": "onTurnStart",
+    "effect": { "type": "rapport", "value": 3 }
+  },
+  {
+    "id": "deadlineklocka",
+    "name": "Deadlineklocka",
+    "icon": "⏰",
+    "tier": "common",
+    "shopPrice": 110,
+    "description": "Deal 3 Pressure to ALL subjects at the start of each turn.",
+    "hook": "onTurnStart",
+    "effect": { "type": "pressure-all", "value": 3 }
+  },
+  {
+    "id": "sista-korrekturlasning",
+    "name": "Sista Korrekturläsning",
+    "icon": "✏️",
+    "tier": "common",
+    "shopPrice": 80,
+    "description": "Heal 2 after each interview.",
+    "hook": "onInterviewWin",
+    "effect": { "type": "heal", "value": 2 }
+  },
+  {
+    "id": "linsteleskop",
+    "name": "Linsteleskop",
+    "icon": "🔭",
+    "tier": "uncommon",
+    "shopPrice": 180,
+    "description": "Subjects reveal their intents for the NEXT turn too.",
+    "hook": "passive"
+  },
+  {
+    "id": "kallnatverk",
+    "name": "Källnätverk",
+    "icon": "🕸️",
+    "tier": "uncommon",
+    "shopPrice": 160,
+    "description": "+10 Rapport at the start of each interview.",
+    "hook": "onInterviewStart",
+    "effect": { "type": "rapport", "value": 10 }
+  },
+  {
+    "id": "anteckningsbok",
+    "name": "Anteckningsbok",
+    "icon": "📕",
+    "tier": "uncommon",
+    "shopPrice": 170,
+    "description": "Every 2nd Pressure card deals double. (Pen Nib equivalent)",
+    "hook": "onPressureCardPlayed",
+    "effect": { "type": "double-damage-every-n", "n": 2 }
+  },
+  {
+    "id": "whistleblower-kontakt",
+    "name": "Whistleblower-kontakt",
+    "icon": "🤫",
+    "tier": "uncommon",
+    "shopPrice": 200,
+    "description": "Gain 1 On a Roll when you Exhaust a card.",
+    "hook": "onExhaust",
+    "effect": { "type": "apply-status", "status": "on-a-roll", "stacks": 1 }
+  },
+  {
+    "id": "krypterad-enhet",
+    "name": "Krypterad Enhet",
+    "icon": "🔐",
+    "tier": "uncommon",
+    "shopPrice": 190,
+    "description": "At the start of each turn, if you have 0 Rapport, gain 8 Rapport.",
+    "hook": "onTurnStart",
+    "effect": { "type": "conditional-rapport", "condition": "rapport-zero", "value": 8 }
+  },
+  {
+    "id": "burner-telefon",
+    "name": "Burner-telefon",
+    "icon": "📱",
+    "tier": "rare",
+    "shopPrice": 280,
+    "description": "+1 Focus every turn.",
+    "hook": "onTurnStart",
+    "effect": { "type": "gain-focus", "value": 1 }
+  },
+  {
+    "id": "dod-kalla",
+    "name": "Död Källa",
+    "icon": "💀",
+    "tier": "rare",
+    "shopPrice": 300,
+    "description": "When you take damage, deal 3 Pressure to ALL subjects.",
+    "hook": "onDamageTaken",
+    "effect": { "type": "pressure-all", "value": 3 }
+  },
+  {
+    "id": "pulitzerprisnominering",
+    "name": "Pulitzerprisnominering",
+    "icon": "🏆",
+    "tier": "rare",
+    "shopPrice": 350,
+    "description": "+5 Max Credibility. Heal to full.",
+    "hook": "onPickup",
+    "effect": { "type": "max-credibility", "value": 5 }
+  },
+  {
+    "id": "tabloid-instinkt",
+    "name": "Tabloid-instinkt",
+    "icon": "🗞️",
+    "tier": "boss",
+    "description": "+1 Focus per turn. Start each interview with 2 On a Roll.",
+    "hook": "onInterviewStart",
+    "effect": { "type": "multi", "effects": [
+      { "type": "max-focus", "value": 1 },
+      { "type": "apply-status", "status": "on-a-roll", "stacks": 2 }
+    ]}
+  },
+  {
+    "id": "adrenalinspruta",
+    "name": "Adrenalinspruta",
+    "icon": "💉",
+    "tier": "boss",
+    "description": "Draw 2 extra cards per turn.",
+    "hook": "onTurnStart",
+    "effect": { "type": "draw", "value": 2 }
+  },
+  {
+    "id": "redaktionens-stod",
+    "name": "Redaktionens Stöd",
+    "icon": "🤝",
+    "tier": "boss",
+    "description": "Heal 3 at the start of each turn.",
+    "hook": "onTurnStart",
+    "effect": { "type": "heal", "value": 3 }
+  }
+]

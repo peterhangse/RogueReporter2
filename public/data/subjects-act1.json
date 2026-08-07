@@ -1,0 +1,109 @@
+[
+  {
+    "id": "stadstjanstemannen",
+    "name": "Stadstjänstemannen",
+    "tier": "normal",
+    "composure": 42,
+    "behavior": "rotation",
+    "moves": [
+      { "type": "GUARD", "value": 8, "label": "Byråkratiskt svar" },
+      { "type": "ATTACK", "value": 7, "label": "Avfärda 7" }
+    ]
+  },
+  {
+    "id": "pr-talespersonen",
+    "name": "PR-Talespersonen",
+    "tier": "normal",
+    "composure": 48,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "ATTACK", "value": 6, "weight": 3, "label": "Medieuttalande 6" },
+      { "type": "GUARD", "value": 6, "weight": 2, "label": "Pressmeddelande" },
+      { "type": "SPIN", "value": 1, "weight": 2, "label": "Spin" }
+    ]
+  },
+  {
+    "id": "nervose-praktikanten",
+    "name": "Nervöse Praktikanten",
+    "tier": "normal",
+    "composure": 28,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "ATTACK", "value": 4, "weight": 2, "label": "Nervöst svar 4" },
+      { "type": "NO_COMMENT", "value": 0, "weight": 3, "label": "Inga kommentarer" },
+      { "type": "GUARD", "value": 4, "weight": 1, "label": "Titta bort" }
+    ]
+  },
+  {
+    "id": "kommunalradet",
+    "name": "Kommunalrådet",
+    "tier": "normal",
+    "composure": 55,
+    "behavior": "rotation",
+    "moves": [
+      { "type": "GUARD", "value": 10, "label": "Partilinje" },
+      { "type": "ATTACK", "value": 8, "label": "Motangrepp 8" },
+      { "type": "BUFF", "value": 3, "status": "pr-spin", "label": "PR-maskineri" }
+    ]
+  },
+  {
+    "id": "foretagsadvokaten",
+    "name": "Företagsadvokaten",
+    "tier": "elite",
+    "composure": 80,
+    "behavior": "weighted",
+    "boss": false,
+    "moves": [
+      { "type": "ATTACK", "value": 10, "weight": 2, "label": "Stämningshot 10" },
+      { "type": "GUARD", "value": 12, "weight": 2, "label": "Juridisk mur" },
+      { "type": "DEBUFF", "value": 1, "status": "rattled", "stacks": 1, "weight": 1, "label": "Hotbrev" },
+      { "type": "BUFF", "value": 5, "status": "lawyer-present", "weight": 1, "label": "Advokat närvarande" }
+    ],
+    "phases": [
+      { "threshold": 1, "moves": [
+        { "type": "ATTACK", "value": 10, "weight": 2, "label": "Stämningshot 10" },
+        { "type": "GUARD", "value": 12, "weight": 2, "label": "Juridisk mur" }
+      ]},
+      { "threshold": 0.5, "moves": [
+        { "type": "ATTACK", "value": 14, "weight": 3, "label": "Fullmakt 14" },
+        { "type": "DEBUFF", "value": 1, "status": "rattled", "stacks": 2, "weight": 1, "label": "Tystnadsplikt" }
+      ]}
+    ]
+  },
+  {
+    "id": "spin-doktorn",
+    "name": "Spin-doktorn",
+    "tier": "elite",
+    "composure": 75,
+    "behavior": "weighted",
+    "moves": [
+      { "type": "ATTACK", "value": 8, "weight": 2, "label": "Vridning 8" },
+      { "type": "SPIN", "value": 2, "weight": 3, "label": "Dubbel spin" },
+      { "type": "GUARD", "value": 10, "weight": 1, "label": "Narrativkontroll" },
+      { "type": "BUFF", "value": 2, "status": "pr-spin", "weight": 1, "label": "Mediecirkus" }
+    ]
+  },
+  {
+    "id": "borgmastaren",
+    "name": "Borgmästaren",
+    "tier": "boss",
+    "composure": 125,
+    "behavior": "weighted",
+    "boss": true,
+    "phases": [
+      { "threshold": 1.0, "moves": [
+        { "type": "ATTACK", "value": 8, "weight": 2, "label": "Politisk retorik 8" },
+        { "type": "GUARD", "value": 12, "weight": 2, "label": "Sympati" },
+        { "type": "BUFF", "value": 8, "status": "sympathy-armor", "weight": 1, "label": "Folkets röst" }
+      ]},
+      { "threshold": 0.5, "moves": [
+        { "type": "ATTACK", "value": 14, "weight": 3, "label": "Offensiv 14" },
+        { "type": "DEBUFF", "value": 2, "status": "rattled", "stacks": 2, "weight": 1, "label": "Förtal" },
+        { "type": "SPIN", "value": 2, "weight": 1, "label": "Propaganda" }
+      ]}
+    ],
+    "specialMoves": [
+      { "trigger": "turn", "turnNumber": 7, "move": { "type": "ATTACK", "value": 25, "label": "Presskonferens 25" } }
+    ]
+  }
+]
